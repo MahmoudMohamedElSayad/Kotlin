@@ -6,29 +6,34 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.compose.runtime.mutableStateListOf
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import com.example.kotlin.R
-import com.example.kotlin.view.fragments.BaseFragment
-import java.sql.DriverManager.println
-import java.util.*
 
 class HomeFragment : Fragment() {
-    private var root: View? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        root = inflater.inflate(R.layout.fragment_home, container, false)
-        main()
+       val root = inflater.inflate(R.layout.fragment_home, container, false) as View
+        initData(root)
         return root
 
     }
 
-    private fun main() {
-        var list= mutableStateListOf<String>()
-        list[0]="ali"
-        list[1]="noor"
-        Log.d("sddddd", "$list")
+    private fun initData(root: View) {
+        val ageEditText= root.findViewById<EditText>(R.id.date_birth_edit)
+        val ageNowTextView=root.findViewById<TextView>(R.id.show_result_tv)
+        val calculateBtu=root.findViewById<Button>(R.id.calculate_btu)
+        calculateBtu.setOnClickListener {
+            val ageText=ageEditText.editableText.toString()
+            Log.d("sddfsadsa", "$ageText")
+            val age:Int=2022-ageText.toInt()
+            ageNowTextView?.text=age.toString()
+        }
     }
+
+
 }
