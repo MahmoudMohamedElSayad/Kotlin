@@ -16,9 +16,8 @@ import com.example.kotlin.R
 import com.example.kotlin.utils.interfaces.TryAgainOncall
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
+
 import org.aviran.cookiebar2.CookieBar
-import java.io.File
 import java.lang.Exception
 
 class HelperMethods {
