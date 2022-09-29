@@ -2,4 +2,8 @@
     <string name="app_name">Kotlin</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_inter_net">error inter net</string>
+    <string name="warning">تحذير</string>
+    <string name="try_again">حاول مرة أخرى</string>
+    <string name="cancel">إلغاء</string>
 </resources>
