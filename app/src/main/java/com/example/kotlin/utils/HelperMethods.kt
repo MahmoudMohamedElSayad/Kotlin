@@ -15,9 +15,10 @@ import coil.transform.CircleCropTransformation
 import com.example.kotlin.R
 import com.example.kotlin.utils.interfaces.TryAgainOncall
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
-
 import org.aviran.cookiebar2.CookieBar
+import java.io.File
 import java.lang.Exception
 
 class HelperMethods {
@@ -61,22 +62,22 @@ class HelperMethods {
         bundle: Bundle?
     ) {
         val transaction = getChildFragmentManager.beginTransaction()
-        if (fromWhere === "l") {
+        if (fromWhere == "l") {
             transaction.setCustomAnimations(
                 R.anim.slide_in_left,
                 R.anim.slide_out_right
             )
         }
-        if (fromWhere === "r") {
+        if (fromWhere == "r") {
             transaction.setCustomAnimations(
                 R.anim.enter_from_right,
                 R.anim.exit_to_left
             )
         }
-        if (fromWhere === "t") {
+        if (fromWhere == "t") {
             transaction.setCustomAnimations(R.anim.slide_out_down, R.anim.slide_in_down)
         }
-        if (fromWhere === "b") {
+        if (fromWhere == "b") {
             transaction.setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_up)
         }
         fragment.arguments = bundle
@@ -161,6 +162,21 @@ class HelperMethods {
             }
         } catch (e: Exception) {
         }
+    }
+    private fun convertFileToMultipart(pathImageFile:String,key:String):
+            MultipartBody.Part  {
+        var multiParts: ArrayList<MultipartBody.Part> = ArrayList<MultipartBody.Part>()
+
+            // 1. Create File using image url (String)
+            val file = File(pathImageFile)
+            // 2. Create requestBody by using multipart/form-data MediaType from file
+            val requestFile: RequestBody = RequestBody.create(
+                "*/*".toMediaTypeOrNull(), file)
+            // 3. Finally, Create MultipartBody using MultipartBody.Part.createFormData
+            val body: MultipartBody.Part = MultipartBody.Part.createFormData(
+                key, file.name.trim(), requestFile)
+            multiParts.add(body)
+        return body
     }
 
 }
