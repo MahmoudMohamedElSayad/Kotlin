@@ -5,16 +5,12 @@ import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import coil.load
 import coil.transform.CircleCropTransformation
-import com.example.kotlin.databinding.ActivityHomeCycleBinding
 import com.example.kotlin.databinding.ActivityMainBinding
-import com.example.kotlin.utils.uuu
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken

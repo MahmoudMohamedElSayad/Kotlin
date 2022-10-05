@@ -23,7 +23,15 @@
             android:exported="true" />
         <activity
             android:name=".view.activities.UserCycleActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/AppTheme2"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.activities.HomeCycleActivity"
             android:exported="true">
@@ -33,11 +41,7 @@
             android:name=".MainActivity"
             android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
