@@ -1,18 +1,26 @@
 package com.example.kotlin.adapters
 
+import android.app.Activity
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.kotlin.R
+import com.example.kotlin.databinding.ActivityMainBinding
+import com.example.kotlin.view.activities.BaseActivity
 
-class HawayatAdapter : RecyclerView.Adapter<HawayatAdapter.HawayatViewHolder>() {
-
+class HawayatAdapter constructor(
+    var root: View,
+    activity: Activity,
+    context: Context
+) : RecyclerView.Adapter<HawayatAdapter.HawayatViewHolder>() {
+    private val activity: BaseActivity = activity as BaseActivity
+    private val context: Context = context
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HawayatViewHolder {
         val itemView =
@@ -44,9 +52,11 @@ class HawayatAdapter : RecyclerView.Adapter<HawayatAdapter.HawayatViewHolder>() 
 
         @BindView(R.id.card_parent)
         private var view: View? = null
+
         constructor(itemView: View) : super(itemView) {
             view = itemView
             ButterKnife.bind(this, view!!)
         }
     }
+
 }

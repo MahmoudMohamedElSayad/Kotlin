@@ -14,29 +14,34 @@ import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
 import butterknife.ButterKnife
 import com.example.kotlin.R
+import com.example.kotlin.databinding.FragmentHomeBinding
+import com.example.kotlin.databinding.FragmentLoginBinding
 import com.example.kotlin.view.fragments.BaseFragment
 import java.io.Serializable
 
 class HomeFragment : BaseFragment() {
     lateinit var navController: NavController
+    private lateinit var binding: FragmentHomeBinding
+    lateinit var root:View
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_home, container, false) as View
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        root = binding.root
         ButterKnife.bind(this, root)
         initData(root)
         return root
     }
 
     private fun initData(root: View) {
-        val ageEditText = root.findViewById<EditText>(R.id.date_birth_edit)
-        val ageNowTextView = root.findViewById<TextView>(R.id.show_result_tv)
-        val calculateBtu = root.findViewById<Button>(R.id.calculate_btu)
-        calculateBtu.setOnClickListener {
+       binding.calculateBtu.setOnClickListener {
             val bundle = Bundle()
             Navigation.findNavController(root).navigate(R.id.moreFragment,bundle)
         }
     }
 
+    override fun onBack() {
+        requireActivity().finish()
+    }
 }
