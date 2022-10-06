@@ -2,7 +2,10 @@ package com.example.kotlin.utils
 
 import android.app.Activity
 import android.app.ProgressDialog
+import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -216,6 +219,14 @@ class HelperMethods {
             }
         }
     }
-
+    ////the rate function App
+    fun rateApp(context: Context) {
+        val appPackageName = context.packageName
+        try {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
+        } catch (e: ActivityNotFoundException) {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
+        }
+    }
 
 }

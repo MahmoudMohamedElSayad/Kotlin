@@ -15,6 +15,7 @@ import androidx.navigation.Navigation.findNavController
 import butterknife.ButterKnife
 import com.example.kotlin.R
 import com.example.kotlin.view.fragments.BaseFragment
+import java.io.Serializable
 
 class HomeFragment : BaseFragment() {
     lateinit var navController: NavController
@@ -26,7 +27,6 @@ class HomeFragment : BaseFragment() {
         ButterKnife.bind(this, root)
         initData(root)
         return root
-
     }
 
     private fun initData(root: View) {
@@ -34,9 +34,9 @@ class HomeFragment : BaseFragment() {
         val ageNowTextView = root.findViewById<TextView>(R.id.show_result_tv)
         val calculateBtu = root.findViewById<Button>(R.id.calculate_btu)
         calculateBtu.setOnClickListener {
-            Navigation.findNavController(root).navigate(R.id.moreFragment)
+            val bundle = Bundle()
+            Navigation.findNavController(root).navigate(R.id.moreFragment,bundle)
         }
     }
-
 
 }
