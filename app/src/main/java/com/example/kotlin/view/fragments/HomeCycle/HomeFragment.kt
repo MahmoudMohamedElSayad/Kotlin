@@ -25,8 +25,6 @@ class HomeFragment : BaseFragment() {
         val root = inflater.inflate(R.layout.fragment_home, container, false) as View
         ButterKnife.bind(this, root)
         initData(root)
-
-
         return root
 
     }
