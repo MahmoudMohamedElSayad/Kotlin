@@ -14,4 +14,8 @@ class MoreFragment : BaseFragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_more, container, false)
     }
+
+    override fun onBack() {
+        super.onBack()
+    }
 }

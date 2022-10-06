@@ -20,7 +20,6 @@ import com.example.kotlin.view.fragments.BaseFragment
 import java.io.Serializable
 
 class HomeFragment : BaseFragment() {
-    lateinit var navController: NavController
     private lateinit var binding: FragmentHomeBinding
     lateinit var root:View
     override fun onCreateView(
