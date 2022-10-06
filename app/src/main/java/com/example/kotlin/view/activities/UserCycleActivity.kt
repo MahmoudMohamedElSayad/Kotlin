@@ -1,10 +1,9 @@
 package com.example.kotlin.view.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kotlin.R
 import com.example.kotlin.utils.HelperMethods.HelperMethods.replaceFragment
-import com.example.kotlin.view.fragments.UserCycle.LoginFragment
+import com.example.kotlin.view.fragments.userCycle.LoginFragment
 
 class UserCycleActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

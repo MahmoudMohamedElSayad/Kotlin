@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingStart="@dimen/_16sdp"
     android:paddingEnd="@dimen/_16sdp"
-    tools:context=".view.fragments.HomeCycle.HomeFragment">
+    tools:context=".view.fragments.homeCycle.HomeFragment">
 <EditText
     android:id="@+id/date_birth_edit"
     android:layout_width="match_parent"
