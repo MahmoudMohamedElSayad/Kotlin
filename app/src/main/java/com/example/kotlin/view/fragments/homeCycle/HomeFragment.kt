@@ -34,7 +34,7 @@ class HomeFragment : BaseFragment() {
     private fun initData(root: View) {
        binding.calculateBtu.setOnClickListener {
             val bundle = Bundle()
-            Navigation.findNavController(it).navigate(R.id.moreFragment,bundle)
+            Navigation.findNavController(root).navigate(R.id.ordersDetailsFragment,bundle)
         }
     }
 
