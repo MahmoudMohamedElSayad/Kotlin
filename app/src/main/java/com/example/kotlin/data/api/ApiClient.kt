@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class ApiClient {
+    companion object ApiClient {
     private val client = OkHttpClient.Builder().build()
     val BASE_URL = "https://khirat-albaten.rent-co.org/api/"
     lateinit var retrofit: Retrofit
@@ -21,5 +22,6 @@ class ApiClient {
             .client(client)
             .build()
         return retrofit.create(ApiServices::class.java)
+    }
     }
 }

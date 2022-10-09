@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.kotlin.R
 import com.example.kotlin.data.local.SharedPreferencesManger.SharedPreferencesManger.REMEMBER_ME
 import com.example.kotlin.data.local.SharedPreferencesManger.SharedPreferencesManger.SaveData
@@ -16,6 +17,7 @@ import com.example.kotlin.utils.HelperMethods
 import com.example.kotlin.utils.HelperMethods.HelperMethods.dismissProgressDialog
 import com.example.kotlin.utils.HelperMethods.HelperMethods.progressDialog
 import com.example.kotlin.utils.HelperMethods.HelperMethods.showCookieMsg
+import com.example.kotlin.utils.HelperMethods.HelperMethods.showProgressDialog
 import com.example.kotlin.utils.InternetState.InternetState.isConnected
 import com.example.kotlin.utils.ToastCreator.ToastCreator.onCreateErrorToast
 import com.example.kotlin.utils.interfaces.TryAgainOncall
@@ -26,7 +28,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.lang.Exception
 
-class ViewModelUser {
+class ViewModelUser : ViewModel() {
     var TAG = "ViewModelUser_ERROR"
     var generalLoginResponse = MutableLiveData<GetUserLoginDataResponce>()
     fun makeGetUserLoginDataResponce(): MutableLiveData<GetUserLoginDataResponce>? {
@@ -34,7 +36,7 @@ class ViewModelUser {
     }
     fun setGetUserLoginDataResponce(
         activity: Activity,
-        method: Call<GetUserLoginDataResponce?>,
+        method: Call<GetUserLoginDataResponce>,
         password: String?,
         remember: Boolean,
         type: String,
@@ -48,9 +50,9 @@ class ViewModelUser {
                     HelperMethods.showProgressDialog(activity, activity.getString(R.string.wait))
                 }
             } else {
-//                if (!progressDialog.isShowing()) {
-//                    HelperMethod.showProgressDialog(activity, activity.getString(R.string.wait));
-//                }
+                if (progressDialog!!.isShowing()) {
+                    HelperMethods.showProgressDialog(activity, activity.getString(R.string.wait));
+                }
             }
             method.enqueue(object : Callback<GetUserLoginDataResponce?> {
                 override fun onResponse(
@@ -71,7 +73,7 @@ class ViewModelUser {
 //                                    dialog.showDialog(activity, message)
                                 } else {
                                 }
-                                generalLoginResponse?.postValue(response.body())
+                                generalLoginResponse.postValue(response.body())
                             } else {
                                 onCreateErrorToast(activity, activity.getString(R.string.error));
                                 Log.d(TAG, "onResponse: " + response.body()!!.message)

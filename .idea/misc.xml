@@ -7,10 +7,21 @@
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/gradiant_navigation_shadow.xml" value="0.2109375" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/gradient_btn_gray_shap.xml" value="0.3037037037037037" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/gradient_navigation_shape.xml" value="0.2109375" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/hawayat_selector.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic__01_container_active.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic__02_container_disactive.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_active_true_active.xml" value="0.3037037037037037" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_box_with_icon.xml" value="0.3037037037037037" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_eye_on_off_disactive.xml" value="0.3037037037037037" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2109375" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_more_active.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_more_disactive.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_notification_active.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_orders_active_icon.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_orders_disactive.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/more_selector.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/notification_selector.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/order_selector.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/red_shape.xml" value="0.337037037037037" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/shape_toast.xml" value="0.2109375" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/toggle_selector.xml" value="0.3037037037037037" />
@@ -23,6 +34,8 @@
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/layout/fragment_home.xml" value="0.21014492753623187" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/layout/fragment_login.xml" value="0.24818840579710144" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/layout/fragment_more.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/layout/fragment_notifications.xml" value="0.2875905797101449" />
+        <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/layout/fragment_orders.xml" value="0.2875905797101449" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/layout/toast_error.xml" value="0.24818840579710144" />
         <entry key="..\:/Users/codeLop-6/AndroidStudioProjects/Kotlin/app/src/main/res/menu/normal_bottom_nav_menu.xml" value="0.19479166666666667" />
       </map>

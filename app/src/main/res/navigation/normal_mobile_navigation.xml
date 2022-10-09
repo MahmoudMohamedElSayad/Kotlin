@@ -15,4 +15,14 @@
         android:name="com.example.kotlin.view.fragments.homeCycle.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/notificationsFragment2"
+        android:name="com.example.kotlin.view.fragments.homeCycle.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.kotlin.view.fragments.homeCycle.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
 </navigation>

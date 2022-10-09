@@ -3,6 +3,9 @@ package com.example.kotlin.data.local
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
+import android.service.autofill.UserData
+import androidx.annotation.RequiresApi
 import com.example.kotlin.data.model.getUserLoginDataResponce.Data
 import com.google.gson.Gson
 
@@ -101,6 +104,32 @@ class SharedPreferencesManger {
             return sharedPreferences?.getString(
                 data_Key,
                 "ar"
+            )
+        }
+
+
+        fun LoadUserData(activity: Activity?): UserData? {
+          setSharedPreferences(
+                activity!!
+            )
+            var loginData: UserData? = null
+            val gson = Gson()
+            loginData = gson.fromJson(
+                LoadData(
+                    activity,
+                    USER_DATA
+                ),
+                UserData::class.java
+            )
+            return loginData
+        }
+        fun LoadData(activity: Activity?, data_Key: String?): String? {
+             setSharedPreferences(
+                activity!!
+            )
+            return  sharedPreferences!!.getString(
+                data_Key,
+                null
             )
         }
     }

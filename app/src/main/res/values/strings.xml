@@ -18,4 +18,9 @@
     <string name="create_new_account">إنشاء حساب جديد</string>
     <string name="skip">تخطي</string>
     <string name="phone_number">رقم الجوال</string>
+    <string name="hawayat">الحاويات</string>
+    <string name="orders">طلباتي</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="more">المزيد</string>
+    <string name="invalid_phone">من فضلك أدخل رقم جوال صحيح مثال :05xxxxxxxx</string>
 </resources>

@@ -5,12 +5,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.kotlin.R
-import com.example.kotlin.databinding.ActivityMainBinding
+
 import com.example.kotlin.view.activities.BaseActivity
 
 class HawayatAdapter constructor(
@@ -20,8 +19,6 @@ class HawayatAdapter constructor(
 ) : RecyclerView.Adapter<HawayatAdapter.HawayatViewHolder>() {
     private val activity: BaseActivity = activity as BaseActivity
     private val context: Context = context
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HawayatViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.card_hawayat, parent, false)

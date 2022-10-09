@@ -30,6 +30,7 @@
         </activity>
         <activity
             android:name=".view.activities.HomeCycleActivity"
+            android:theme="@style/AppTheme2"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -27,7 +27,7 @@ import java.lang.Exception
 
 class HelperMethods {
     companion object HelperMethods {
-        lateinit var progressDialog: ProgressDialog
+          var progressDialog: ProgressDialog?=null
 
         //this method to load image from url
         fun onLoadImageFromUrl2(imageView: ImageView?, URl: String?) {
@@ -93,7 +93,7 @@ class HelperMethods {
             transaction.commit()
         }
 
-        fun showTextError(errorMessage: String?, layoutParent: View, textErrorLayout: TextView) {
+        fun showTextError(errorMessage: String, layoutParent: View, textErrorLayout: TextView) {
             layoutParent.visibility = View.VISIBLE
             textErrorLayout.text = errorMessage
         }
@@ -202,31 +202,36 @@ class HelperMethods {
             try {
                 progressDialog =
                     ProgressDialog(activity)
-                progressDialog.setMessage(title)
-                progressDialog.setIndeterminate(
+                progressDialog!!.setMessage(title)
+                progressDialog!!.setIndeterminate(
                     false
                 )
-                progressDialog.setCancelable(false)
-                progressDialog.show()
+                progressDialog!!.setCancelable(false)
+                progressDialog!!.show()
             } catch (e: Exception) {
             }
         }
 
         fun dismissProgressDialog() {
             try {
-                progressDialog.dismiss()
+                progressDialog!!.dismiss()
             } catch (e: Exception) {
             }
         }
-    }
-    ////the rate function App
-    fun rateApp(context: Context) {
-        val appPackageName = context.packageName
-        try {
-            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
-        } catch (e: ActivityNotFoundException) {
-            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
+        ////the rate function App
+        fun rateApp(context: Context) {
+            val appPackageName = context.packageName
+            try {
+                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
+            } catch (e: ActivityNotFoundException) {
+                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
+            }
         }
+
+
+
     }
+
+
 
 }

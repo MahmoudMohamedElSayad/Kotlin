@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/hawayat_selector"
+        android:title="@string/hawayat"/>
+    <item
+        android:id="@+id/ordersFragment"
+        android:icon="@drawable/order_selector"
+        android:title="@string/orders"/>
+    <item
+        android:id="@+id/notificationsFragment2"
+        android:icon="@drawable/notification_selector"
+        android:title="@string/notifications"/>
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/more_selector"
+        android:title="@string/more"/>
 </menu>
