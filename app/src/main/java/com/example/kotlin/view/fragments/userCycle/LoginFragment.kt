@@ -22,6 +22,9 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.messaging.FirebaseMessaging
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import retrofit2.Call
 
 class LoginFragment : BaseFragment(), TryAgainOncall {
@@ -42,6 +45,10 @@ class LoginFragment : BaseFragment(), TryAgainOncall {
         onclick()
         FirebaseApp.initializeApp(requireContext())
         initListener()
+        GlobalScope.launch {
+            Log.d(TAG, "zzzz ${Thread.currentThread().name}")
+            printText("dsadsadsadsa")
+        }
         return root
     }
 
@@ -164,5 +171,8 @@ class LoginFragment : BaseFragment(), TryAgainOncall {
         TODO("Not yet implemented")
     }
 
-
+    suspend fun printText(myText: String) {
+        delay(1000)
+        Log.d(TAG, myText)
+    }
 }

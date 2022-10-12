@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import butterknife.ButterKnife
 import com.example.kotlin.R
 import com.example.kotlin.data.local.SharedPreferencesManger.SharedPreferencesManger.LoadUserData
@@ -34,7 +35,8 @@ class HomeFragment : BaseFragment() {
     private fun initData(root: View) {
        binding.calculateBtu.setOnClickListener {
             val bundle = Bundle()
-            Navigation.findNavController(root).navigate(R.id.ordersDetailsFragment,bundle)
+//            Navigation.findNavController(root).navigate(R.id.ordersDetailsFragment,bundle)
+           root.findNavController().navigate(R.id.ordersDetailsFragment)
         }
     }
 

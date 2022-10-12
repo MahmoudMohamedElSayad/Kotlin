@@ -41,7 +41,7 @@
                 android:theme="@style/navigation_buttom_style"
                 app:labelVisibilityMode="labeled"
                 app:layout_constraintBottom_toBottomOf="parent"
-              />
+                app:menu="@menu/normal_bottom_nav_menu" />
 
 
         </LinearLayout>
