@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".view.fragments.homeCycle.MoreFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/date_birth_edit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="more" />
+        android:layout_height="wrap_content"
+        android:hint="أدخل تاريخ ميلادك"
+        android:textSize="@dimen/_16ssp"
+        />
+    <TextView
+        android:id="@+id/show_result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8ssp"
+        android:gravity="center"
+        android:textSize="@dimen/_16ssp"/>
 
-</FrameLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="calculate"
+        android:textSize="@dimen/_8ssp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/calculate_btu"/>
+
+</LinearLayout>

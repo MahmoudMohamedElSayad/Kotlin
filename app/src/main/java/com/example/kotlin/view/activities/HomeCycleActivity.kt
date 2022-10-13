@@ -14,10 +14,12 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.kotlin.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home_cycle.*
 
 
 class HomeCycleActivity : BaseActivity() {
+    var isInorderDetails: Boolean=false
     private var navController: NavController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +28,51 @@ class HomeCycleActivity : BaseActivity() {
         navController=navHostFragment!!.findNavController()
         nav_view.setupWithNavController(navController!!)
         setupButtomNavMenu(navController!!)
+        navController!!.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.ordersDetailsFragment) {
+                if (isInorderDetails){
+                    navController!!.navigate(R.id.homeFragment)
+                    isInorderDetails=false
+                }
+                Log.d("d", "wwwwwwwwwwwwww")
 
-//        nav_view.setOnNavigationItemReselectedListener {
+            } else {
+
+            }
+        }
+//        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+//            when(item.itemId) {
+//                R.id.homeFragment -> {
+//                    Log.d("d", "wwwwwwwwwwwwww")
+//                    navController!!.navigate(R.id.homeFragment)
+//                    // Respond to navigation item 1 click
+//                    true
+//                }
+//                R.id.notificationsFragment2 -> {
+//                    Log.d("d", "wwwwwwwwwwwwww3")
+//                    // Respond to navigation item 2 click
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
+//        nav_view.setOnNavigationItemReselectedListener { item ->
+//            when(item.itemId) {
+//                R.id.homeFragment -> {
+//                    navController!!.navigate(R.id.homeFragment)
+//                    Log.d("d", "wwwwwwwwwwwwww2")
+//
+//                    // Respond to navigation item 1 reselection
+//                }
+//                R.id.notificationsFragment2 -> {
+//                    Log.d("d", "wwwwwwwwwwwwww4")
+//                    // Respond to navigation item 2 reselection
+//                }
+//            }
+//        }
+
+//        nav_view.setOnItemSelectedListener {
+//            navController!!.popBackStack()
 //            when (it.itemId) {
 //                R.id.homeFragment -> {
 //                    Log.d("d", "wwwwwwwwwwwwww")
@@ -42,7 +87,7 @@ class HomeCycleActivity : BaseActivity() {
 //                }
 //                R.id.ordersFragment -> {
 //                    Log.d("d", "wwwwwwwwwwwwww2222222222222")
-//                    Log.d("d", it.itemId.toString())
+//                    Log.d("d", item.itemId.toString())
 //
 //                    navController!!.navigate(R.id.ordersFragment)
 //
@@ -57,7 +102,8 @@ class HomeCycleActivity : BaseActivity() {
 //            }
 //        }
     }
-    private fun setupButtomNavMenu(navController:NavController){
+
+        private fun setupButtomNavMenu(navController:NavController){
         nav_view?.let {
             NavigationUI.setupWithNavController(it,navController)
         }
